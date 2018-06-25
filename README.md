@@ -6,16 +6,18 @@ Open fat partition and make a file > ssh (with no extension)
 https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0
 Use a DHCP router for 1st time to connect to ssh. 
 
-
-1. Setup IAM Role access settings
-  1.1. https://console.aws.amazon.com/iam/home > Roles > Create Role > 
-  1.2. Select AWS Service and IoT > Next: Permissions :
-    AWSIoTLogging:            Allows creation of Amazon CloudWatch Log groups and streaming logs to the groups
-    AWSIoTRuleActions:        Allows access to all AWS services supported in AWS IoT Rule Actions
-    AWSIoTThingsRegistration: This policy allows users to register things at bulk using AWS IoT StartThingRegistrationTask 
-  1.3. Setup Cross Account Access
-      https://console.aws.amazon.com/iam/home > Roles > Create Role > 
-      Select Another AWS account > Add ID number , uncheck boxes 
+ Markup : * Setup IAM Role access settings
+              * https://console.aws.amazon.com/iam/home > Roles > Create Role > 
+              * Select AWS Service and IoT > Next: Permissions :
+                  * AWSIoTLogging:            Allows creation of Amazon CloudWatch Log groups and streaming logs to the groups
+                  * AWSIoTRuleActions:        Allows access to all AWS services supported in AWS IoT Rule Actions
+                  * AWSIoTThingsRegistration: This policy allows users to register things at bulk using AWS IoT StartThingRegistrationTask 
+            * Setup Cross Account Access
+              * https://console.aws.amazon.com/iam/home > Roles > Create Role > 
+              * Select Another AWS account > Add ID number , uncheck boxes 
+              * Add Policies accordingly ...
+              
+              
       
 
 2. Setup AWS IoT: 
