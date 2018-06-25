@@ -1,11 +1,5 @@
 # AntonisProjects
 AWS IoT, Lambda and IAM policies for setting up rPi 
-Prepare rPi
-Download raspbian wirte image on sd card 
-Open fat partition and make a file > ssh (with no extension) 
-https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0
-Use a DHCP router for 1st time to connect to ssh. 
-
 * Setup IAM Role access settings
     * https://console.aws.amazon.com/iam/home > Roles > Create Role > 
       * Select AWS Service and IoT > Next: Permissions :
@@ -15,19 +9,42 @@ Use a DHCP router for 1st time to connect to ssh.
 * Setup Cross Account Access
   * https://console.aws.amazon.com/iam/home > Roles > Create Role > 
   * Select Another AWS account > Add ID number , uncheck boxes 
-  * Add Policies accordingly ...
+  * Add Policies accordingl ... ( improve) 
+*  Setup AWS IoT:
+   *  https://console.aws.amazon.com/iot/home
+   *  Instructions Here: https://docs.aws.amazon.com/iot/latest/developerguide/iot-sdk-setup.html
+   *  Set region to EU West (Ireland) for Europe 
+   *  Setup a policy: 
+      *  Secure> Plocies > Create a Policy > Advance Mode 
+      *  Copy the contents from aws_iot_policy.txt to the policy statement window. 
+      *  Add a name i.e. rPiPolicy 
+   *  Create a thing:  
+      *  Manage> Register a Thing > Create a single thing
+      *  Just Providing a name is enough> Next >One-click certificate creation (recommended)
+      *  Download Certificates: 
+         *  xxxxxxxxxx-certificate.pem.crt
+         *  xxxxxxxxxx-public.pem.key
+         *  xxxxxxxxxx-private.pem.key
+         *  ca.crt
+      *  Attach rpiPolicy 
+      *  Secure > Certificates > Activate 
+   *  Manage> Things > Select Thing 
+      *  Copy arn arn:aws:iot:eu-west-1:xxxxxxxxxxxx:thing/xxxxxxxxxxxx                                        
+*  Prepare rPi
+   *  Download raspbian wirte image on sd card 
+   *  Open fat partition and make a file > ssh (with no extension) 
+   *  https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0
+   *  Use a DHCP router for 1st time to connect to ssh. 
+* ssh connection    
+      *  ssh pi@192.168.2.2 -X
+*  
 
-              
+
+
+   * 
       
+         
 
-2. Setup AWS IoT: 
-  2.1.  https://console.aws.amazon.com/iot/home
-  2.2   Secure> Plocies > Create a Policy > Advance Mode 
-  2.3   Copy the contents from aws_iot_policy.txt to the policy statement window. 
-  2.4   Add a name i.e. rPiPolicy 
-  2.2.  Manage> Register a Thing > Create a single thing
-  2.3 Just Providing a name is enough> Next >One-click certificate creation (recommended)
-  2.4. Download Certificates 
 Setup RPI as IoT 
 
 1. Add to AWS IoT console 
