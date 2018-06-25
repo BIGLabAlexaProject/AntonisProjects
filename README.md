@@ -37,6 +37,8 @@ AWS IoT, Lambda and IAM policies for setting up rPi
    *  Use a DHCP router for 1st time to connect to ssh. 
 * ssh connection    
       *  ssh pi@192.168.2.2 -X
+*  Setup yotta 
+   *  sudo pip install pip==9.0.3
 *  
 
 
