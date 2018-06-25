@@ -1,3 +1,6 @@
 [submodule "aws-iot-device-sdk-embedded-C"]
 	path = aws-iot-device-sdk-embedded-C
 	url = git@github.com:aws/aws-iot-device-sdk-embedded-C.git
+[submodule "aws-iot-device-sdk-embedded-C/external_libs/mbedTLS"]
+	path = aws-iot-device-sdk-embedded-C/external_libs/mbedTLS
+	url = https://github.com/ARMmbed/mbedtls
